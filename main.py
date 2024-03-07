@@ -1,7 +1,5 @@
 import streamlit as st
-import pickle
-from pathlib import Path
-import streamlit_authenticator as stauth
+
 
 
 st.set_page_config(
@@ -10,23 +8,57 @@ st.set_page_config(
     layout ='wide'
 )
 
-
-# add styling to the page
-st.markdown("<h1 style='text-align: center; color: #006699;'>Welcome to the Vodafone Customer Attrition Prediction Application</h1>", unsafe_allow_html=True)
-
-st.markdown("<h3 style='text-align: center; color: #006699;'>This application provides predictions on customer attrition tendencies, offering valuable insights for customer retention strategies</h3>", unsafe_allow_html=True)
-
-st.divider()
+st.title('Vodafone Customer Attrition Prediction')
 
 
-# Subheading
-st.markdown("<h4 style='text-align: centre;'> Harnessing Data Insights to Predict Customer Attrition</h4>", unsafe_allow_html=True)
-
-# add bullet point to the home page
-st.write('- Empowering Vodafone: Predicting Customer Attrition')
-st.write('- Enhancing Customer Retention: A Predictive Approach')
-st.write('- Unveiling Customer Attrition Patterns: A Data-Driven Solution')
-st.write('- Predictive Analytics for Customer Retention: The Vodafone Advantage')
-st.write('- Insightful Predictions: Anticipating Customer Churn with Precision')
+st.write('Harnessing Data Insights to Predict Customer Attrition')
 
 
+
+virtual_env = """
+# Activate virtual environment
+venv/scripts/activate
+streamlit run main.py
+
+"""
+
+
+col1,col2 = st.columns(2)
+
+with col1:
+    st.markdown('### Attrition Meter')
+    st.write('This app shows where and not an employee will  leave the company not based on some determined demographic and job related questions')
+    
+    st.markdown('### Key Features')
+    st.write('- Data - Allows you acces the data in a remote database through connection')
+    st.write('- Dashboard - Contains data visualization')
+    st.write('- Prediction- Allows you to view prediction in real-time')
+    st.write('- History - Provides you with the records of past predictions')
+
+    st.markdown('### User Benefits')
+    st.write('- Unveiling customer attrition patterns using a data-driven solution')
+    st.write('- Harness the power of Machine Learning without its complexities')
+    st.write('- Insightful predictions by anticipating customer churn with Precision')
+
+with col2:
+    st.markdown('### How to run application')
+    st.code(virtual_env,language='python')
+
+    st.markdown('### Machine Learning Integration')
+    st.write('- You have access to select between 2 models for prediction')
+    st.write('- Simple integration and user-friendly interface')
+    st.write('- Save data to a database for future use')
+    st.write('- Get probability for predictions')
+
+    st.markdown('### Need Help?')
+    st.write("""
+<div>
+    <p>Contact me at <a href="mailto:iyanu1106@gmail.com">iyanu1106@gmail.com</a> for collaborations &copy; 2024. All rights reserved</p>
+   </div>
+""", unsafe_allow_html=True)
+    
+    st.markdown('<a style="color: #0366d6;" href="https://github.com/Iyanuadeleye01">Github</a>', unsafe_allow_html=True)
+    
+    st.markdown('<a style="color: #0366d6;" href="https://medium.com/@iyanu1106">Medium</a>', unsafe_allow_html=True)
+
+st.sidebar.text('Logout')
