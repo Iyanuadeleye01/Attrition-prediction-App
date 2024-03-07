@@ -14,20 +14,61 @@ st.set_page_config(
     page_icon='',
     layout='wide')
 
-# Create an instance of the environment variable 
-environment_variable = dotenv_values('.env')
+st.title('The proprietary Data from Vodafone')
 
 
-server_name = environment_variable.get('server')
-username = environment_variable.get('user')
-password = environment_variable.get('password')
-database_name = environment_variable.get('database')
 
-connection_string = f"DRIVER={{SQL Server}};SERVER={server_name};PWD={password};DATABASE={database_name};UID={username}"
+# Function to create a database connection
+@st.cache_resource(show_spinner="Connecting to database...")
+def create_connection():
+    connection = pyodbc.connect(
+        DRIVER="{SQL Server};"
+        + "SERVER=" + st.secrets["server"]
+        + ";PWD=" + st.secrets["password"]
+        + ";DATABASE=" + st.secrets["database"]
+        + ";UID=" + st.secrets["user"]
+    )
+    return connection
 
-connection = pyodbc.connect(connection_string)
+# Connect to the database
+conn = create_connection()
 
-# Load the  dataset from the database
-query = 'SELECT * FROM dbo.LP2_Telco_churn_first_3000'
-df = pd.read_sql(query, connection)
-st.dataframe(df)
+# Function to query the database
+def query_database(query):
+    with conn.cursor() as curs:
+        curs.execute(query)
+        rows = curs.fetchall()
+        data = pd.DataFrame.from_records(data=rows, columns=[col[0] for col in curs.description])
+    return data
+
+# Function to select all features
+@st.cache_data()
+def all_feature_selection():
+    query = "SELECT * FROM dbo.LP2_Telco_churn_first_3000"
+    data = query_database(query)
+    return data
+
+
+
+
+
+# Main code block to display features based on user selection
+if __name__ == "__main__":
+    col1, col2 = st.columns(2)
+    with col1:
+        selected_feature = st.selectbox('Select Feature Type', options=['All Features', 'Numeric Features', 'Categorical Features'], key='select_feature')
+
+    if selected_feature == 'All Features':
+        df = all_feature_selection()
+    else: 
+        df = all_feature_selection()
+        if selected_feature == 'Numeric Features':
+            df = df.select_dtypes(include='number')
+        else:
+            df = df.select_dtypes(include='object')
+
+        
+
+    st.dataframe(df)
+    #st.write(st.session_state)
+
