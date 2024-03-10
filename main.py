@@ -2,7 +2,7 @@
 import streamlit as st
 from login import authenticate_user, entered_cred
 
-# Initialize session state if not already initialized
+#Initialize session state if not already initialized
 if 'user' not in st.session_state:
     st.session_state['user'] = ''
 if 'pwd' not in st.session_state:
@@ -71,7 +71,7 @@ def main():
             
             st.markdown('<a style="color: #0366d6;" href="https://medium.com/@iyanu1106">Medium</a>', unsafe_allow_html=True)
     else:
-        st.error("Please enter 'admin'  username and password to login")
+        st.error("Please enter 'admin' as username and password to login")
 
 if __name__ == '__main__':
     main()
