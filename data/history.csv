@@ -1,13 +1,8 @@
-customerID,gender,SeniorCitizen,Partner,Dependents,tenure,PhoneService,MultipleLines,InternetService,OnlineSecurity,OnlineBackup,DeviceProtection,TechSupport,StreamingTV,StreamingMovies,Contract,PaperlessBilling,PaymentMethod,MonthlyCharges,TotalCharges
-0.0,Male,0,Yes,Yes,0,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Month-to-month,Yes,Electronic check,18,19
-0.0,Male,0,Yes,Yes,0,No phone service,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Month-to-month,Yes,Electronic check,18,19
-0.0,Male,0,Yes,Yes,0,No,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Month-to-month,Yes,Electronic check,18,19
-0.0,Male,0,Yes,Yes,0,No,Yes,DSL,No internet service,No internet service,No internet service,No internet service,No internet service,No internet service,Month-to-month,Yes,Electronic check,18,19
-0.0,Female,0,Yes,No,2,No,Yes,DSL,No internet service,No internet service,No internet service,No internet service,No internet service,No internet service,Month-to-month,Yes,Electronic check,18,19
-0.0,Female,0,Yes,No,2,No,Yes,DSL,No internet service,No internet service,No internet service,No internet service,No internet service,No internet service,Month-to-month,Yes,Electronic check,20,46
-Female,1,No,Yes,3,Yes,No phone service,DSL,No internet service,Yes,Yes,No internet service,Yes,No internet service,Month-to-month,Yes,Electronic check,53,269
-Female,1,No,No,3,Yes,No phone service,DSL,No internet service,Yes,Yes,No internet service,Yes,No internet service,Month-to-month,Yes,Electronic check,53,269
-Female,1,No,No,3,No,No phone service,DSL,No internet service,Yes,Yes,No internet service,Yes,No internet service,Month-to-month,Yes,Electronic check,53,269
-Female,1,No,No,3,No,No phone service,DSL,No internet service,No internet service,No internet service,No internet service,No internet service,No internet service,Month-to-month,Yes,Electronic check,53,269
-Male,0,No,Yes,2,No,No phone service,No,No internet service,No internet service,No internet service,No internet service,No internet service,No internet service,Month-to-month,Yes,Electronic check,53,269
-Male,0,No,Yes,2,No,No phone service,No,No internet service,No,No internet service,Yes,No internet service,Yes,Month-to-month,Yes,Electronic check,53,269
+gender,SeniorCitizen,Partner,Dependents,tenure,PhoneService,MultipleLines,InternetService,OnlineSecurity,OnlineBackup,DeviceProtection,TechSupport,StreamingTV,StreamingMovies,Contract,PaperlessBilling,PaymentMethod,MonthlyCharges,TotalCharges,Prediction Time,Model used
+Male,0,Yes,Yes,0,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Month-to-month,Yes,Electronic check,18,19,2024-03-10,Random Forest
+Female,1,No,No,4,No,No phone service,Fiber optic,No internet service,No,No internet service,No,No internet service,No,One year,No,Credit card (automatic),23,519,2024-03-10,Logistic Regression
+Male,0,Yes,No,0,No,No phone service,No,No,Yes,Yes,No,Yes,No,Month-to-month,Yes,Electronic check,18,19,2024-03-10,Logistic Regression
+Male,0,Yes,Yes,0,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Month-to-month,Yes,Electronic check,18,19,2024-03-10,Logistic Regression
+Female,0,Yes,Yes,0,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Mailed check,18,19,2024-03-10,Random Forest
+Male,0,Yes,Yes,0,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Month-to-month,Yes,Electronic check,18,19,2024-03-10,Random Forest
+Male,0,Yes,Yes,0,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Month-to-month,Yes,Electronic check,18,19,2024-03-10,Random Forest
